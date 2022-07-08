@@ -9,7 +9,7 @@ docker exec -it -d pulsar bin/pulsar sql-worker run
 
 # pulsar-manager
 docker run -dp 9527:9527 -p 7750:7750 --name pulsar-manager -e SPRING_CONFIGURATION_FILE=/pulsar-manager/pulsar-manager/application.properties apachepulsar/pulsar-manager:v0.2.0
-# sqlpad Web端SQL工具
+# sqlpad Web端SQL工具，注意sqlpad连接Presto时账号填：1，密码为空
 docker run -dp 3000:3000 --name sqlpad -e SQLPAD_ADMIN="admin" -e SQLPAD_ADMIN_PASSWORD="123456" sqlpad/sqlpad
 
 # pulsar-manager 配置账号：pulsar，密码：pulsar
